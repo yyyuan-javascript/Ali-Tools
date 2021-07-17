@@ -1,9 +1,8 @@
 
 import './App.css';
-import { Layout, Menu, Breadcrumb } from 'antd';
-import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
+import { Layout, Menu } from 'antd';
 
-const { SubMenu } = Menu;
+import ProductDetailForm from './components/product-detail-form';
 const { Header, Content, Sider } = Layout;
 
 
@@ -19,7 +18,7 @@ function App() {
     </Header>
     <Layout>
       <Sider width={200} className="site-layout-background">
-    
+      <ProductDetailForm/>
       </Sider>
       <Layout style={{ padding: '0 24px 24px' }}>
         <Content
