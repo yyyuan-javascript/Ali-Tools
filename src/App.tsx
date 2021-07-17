@@ -3,11 +3,18 @@ import './App.css';
 import { Layout, Menu } from 'antd';
 
 import ProductDetailForm from './components/product-detail-form';
+import Preview from './components/preview';
 import { useState } from 'react';
 const { Header, Content, Sider } = Layout;
 
 const App =()=> {
-  const [fields, setFields] = useState({});
+  const [fields, setFields] = useState({chainLength:"",
+    craft:"",
+    material:"",
+    pendantSize:"",
+    productName:"",});
+
+    const [isOnline,setIsOnline] = useState(true);
   console.log(fields);
   return (
     <Layout>
@@ -30,7 +37,7 @@ const App =()=> {
             minHeight: 280,
           }}
         >
-          Content
+          <Preview {...{fields}}/>
         </Content>
       </Layout>
     </Layout>
