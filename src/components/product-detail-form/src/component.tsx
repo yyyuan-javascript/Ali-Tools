@@ -1,13 +1,24 @@
-import React from 'react';
+import React,{FC} from 'react';
 import { Form, Input, Button } from 'antd';
 import {CraftType, Material,ChainLength} from './const';
-
+import {ProductDetailFormProps} from './interface';
 import AntRadio  from '../../ant-radio/src/component';
 
-const ProductDetailForm = () => {
+const ProductDetailForm:FC<ProductDetailFormProps> = ({onChangeCb}) => {
   const [form] = Form.useForm();
   const formLayout ='vertical';
 // debugger;
+const handleOnlineClick =()=>{
+    
+    const fields = form.getFieldsValue();
+    // console.log(fields);
+    // 
+};
+const handleOnChange = () => {
+    const fields = form.getFieldsValue();
+    // console.log(fields);
+    onChangeCb(fields);
+};
 
   return (
     
@@ -18,6 +29,7 @@ const ProductDetailForm = () => {
           layout: formLayout,
         }}
         onFinish={(props)=>{console.log(props)}}
+        onChange={handleOnChange}
       > 
         <Form.Item label="品名" name="productName">
           <Input  />
@@ -44,7 +56,10 @@ const ProductDetailForm = () => {
           <Input placeholder="长*宽" />
         </Form.Item>
         <Form.Item >
-          <Button type="primary" htmlType="submit">Submit</Button>
+          <Button type="primary" htmlType="submit" onClick={handleOnlineClick}>复制online代码</Button>
+        </Form.Item>
+        <Form.Item >
+          <Button type="primary" htmlType="submit">复制h5代码</Button>
         </Form.Item>
       </Form>
     

@@ -3,11 +3,12 @@ import './App.css';
 import { Layout, Menu } from 'antd';
 
 import ProductDetailForm from './components/product-detail-form';
+import { useState } from 'react';
 const { Header, Content, Sider } = Layout;
 
-
-
-function App() {
+const App =()=> {
+  const [fields, setFields] = useState({});
+  console.log(fields);
   return (
     <Layout>
     <Header className="header">
@@ -18,7 +19,7 @@ function App() {
     </Header>
     <Layout>
       <Sider width={200} className="site-layout-background">
-      <ProductDetailForm/>
+      <ProductDetailForm onChangeCb={(fields)=>{setFields(fields);}}/>
       </Sider>
       <Layout style={{ padding: '0 24px 24px' }}>
         <Content
