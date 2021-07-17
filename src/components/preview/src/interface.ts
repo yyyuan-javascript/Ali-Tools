@@ -1,11 +1,4 @@
-
-export interface Fields {
-    chainLength:string;
-    craft:string;
-    material:string;
-    pendantSize:string;
-    productName:string;
-}
+import { Fields } from "../../product-detail-form/src/interface";
 export interface PreviewProps {
     fields: Fields;
     isOnline?:Boolean;

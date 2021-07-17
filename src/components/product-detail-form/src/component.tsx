@@ -1,4 +1,4 @@
-import React,{FC} from 'react';
+import React,{FC, useEffect} from 'react';
 import { Form, Input, Button } from 'antd';
 import {CraftType, Material,ChainLength} from './const';
 import {ProductDetailFormProps} from './interface';
@@ -20,6 +20,10 @@ const handleOnChange = () => {
     onChangeCb(fields);
 };
 
+useEffect(()=>{
+    const fields = form.getFieldsValue();
+    onChangeCb(fields);
+},[]);
   return (
     
       <Form

@@ -8,7 +8,7 @@ const AntRadio:FC<AntRadioProps> = ({initialValue,radios,label,name}) =>{
   //   console.log('radio checked', e.target.value);
   //   setValue(e.target.value);
   // };
-
+// const normalize = (value:string,pre:any,all:any)=>{console.log(value,pre,all);return{label,value};};
     return radios && radios.length > 0 ?(
         <Form.Item {...( {name,label,initialValue})}   >
         {/* <Radio.Group {...(defaultValue &&{defaultValue})}> */}

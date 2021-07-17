@@ -15,7 +15,7 @@ const App =()=> {
     productName:"",});
 
     const [isOnline,setIsOnline] = useState(true);
-  console.log(fields);
+  // console.log(fields);
   return (
     <Layout>
     <Header className="header">
