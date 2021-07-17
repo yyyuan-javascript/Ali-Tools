@@ -12,13 +12,13 @@ export const ChainLength = {
     L39_45:"39+4.5CM",
 };
 type FieldsAttr = keyof Fields ;
-export const Trans:Record<FieldsAttr,string> = {
+
+export const Trans:Partial<Record<FieldsAttr,string>> = {
     productName:'品名',
     craft: '工艺',
     material: '材质',
     chainLength: '链长',
     pendantSize:'吊坠尺寸'
-
 };
 
 // 产品信息字段展示顺序

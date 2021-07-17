@@ -7,4 +7,6 @@ export interface Fields {
     material:string;
     pendantSize:string;
     productName:string;
+    showImgListStr:string;
+    detailImgListStr:string;
 }

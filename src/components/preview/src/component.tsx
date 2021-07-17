@@ -9,13 +9,12 @@ import {
 import ProductInfo from '../../product-info';
 const Preview: FC<PreviewProps> = ({
     fields }) => {
-    // const {
-    //     chainLength,
-    //     craft,
-    //     material,
-    //     pendantSize,
-    //     productName} = fields || {};
-    // console.log(fields);
+    const {
+    showImgListStr,
+    detailImgListStr,    
+    } = fields || {};
+    console.log(    showImgListStr,
+        );
 
     return (
         <div style={{padding: '0 9px',background: 'white'}}>

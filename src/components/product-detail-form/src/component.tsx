@@ -3,6 +3,7 @@ import { Form, Input, Button } from 'antd';
 import {CraftType, Material,ChainLength} from './const';
 import {ProductDetailFormProps} from './interface';
 import AntRadio  from '../../ant-radio/src/component';
+import TextArea from 'antd/lib/input/TextArea';
 
 const ProductDetailForm:FC<ProductDetailFormProps> = ({onChangeCb}) => {
   const [form] = Form.useForm();
@@ -58,6 +59,12 @@ useEffect(()=>{
         />
         <Form.Item label="吊坠尺寸（MM）" name="pendantSize">
           <Input placeholder="长*宽" />
+        </Form.Item>
+        <Form.Item label="商品展示图片字符串（淘宝中复制）" name="showImgListStr">
+          <TextArea  />
+        </Form.Item>
+        <Form.Item label="商品详情图片字符串（淘宝中复制）" name="detailImgListStr">
+          <TextArea  />
         </Form.Item>
         <Form.Item >
           <Button type="primary" htmlType="submit" onClick={handleOnlineClick}>复制online代码</Button>
