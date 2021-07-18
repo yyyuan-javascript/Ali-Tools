@@ -29,7 +29,9 @@ const Preview: FC<PreviewProps> = ({
                 <ProductInfo {...{ fields }} />
                 <ImgList imgList={[{img:ProductShowImg,alt:"product show"}]}/>
                 <ImgList imgList={getImgListFromString(showImgListStr)}/>
+                <ImgList imgList={[{img:ProductDetailImg,alt:"product detail"}]}/>
                 <ImgList imgList={getImgListFromString(detailImgListStr)}/>
+                <ImgList imgList={[{img:BuyerNoticeImg,alt:"buyers notice"}]}/>
             </div>
         </div>
     );

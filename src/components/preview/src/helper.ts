@@ -1,6 +1,5 @@
-import {ImgItem} from '../../Img-list/src/interface';
-export const getImgListFromString = (str:string):ImgItem[] => {
-    str = "111";
-    return [{img:'111'}];
+import { ImgItem } from '../../Img-list/src/interface';
 
+export const getImgListFromString = (str: string): ImgItem[] => {
+    return str ?str.trim().split("\n").map(item => { return { img: item }; }):[];
 }

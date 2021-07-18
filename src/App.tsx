@@ -25,7 +25,7 @@ const App = () => {
       <Header className="header">
         <div className="logo" />
         <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
-          <Menu.Item key="1">nav 1</Menu.Item>
+          <Menu.Item key="1">{'宝贝详情编辑器'}</Menu.Item>
         </Menu>
       </Header>
       <Layout>
