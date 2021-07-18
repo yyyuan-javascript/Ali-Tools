@@ -1,5 +1,6 @@
 export interface ProductDetailFormProps {
     onChangeCb:(obj:any)=>void;
+    onlineClickCb?: () => void;
 }
 export interface Fields {
     chainLength:string;

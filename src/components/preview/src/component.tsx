@@ -10,16 +10,16 @@ import ProductInfo from '../../product-info';
 import ImgList from '../../Img-list';
 import {getImgListFromString} from './helper';
 const Preview: FC<PreviewProps> = ({
-    fields }) => {
+    fields,selfRef }) => {
     const {
     showImgListStr,
     detailImgListStr,    
     } = fields || {};
-    console.log(    showImgListStr,
-        );
+    // console.log(    showImgListStr,
+    //     );
 
     return (
-        <div style={{padding: '0 9px',background: 'white'}}>
+        <div ref={selfRef} style={{padding: '0 9px',background: 'white'}}>
             <div style={{
                 maxWidth: "750px", margin: "auto",
                  fontSize: '14px', fontWeight: 600, fontFamily: 'MicrosoftJhengHei',

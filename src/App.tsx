@@ -4,20 +4,17 @@ import { Layout, Menu } from 'antd';
 
 import ProductDetailForm from './components/product-detail-form';
 import Preview from './components/preview';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import {Fields} from './components/product-detail-form/src/interface';
 const { Header, Content, Sider } = Layout;
-
 const App = () => {
-  const [fields, setFields] = useState({
-    chainLength: "",
-    craft: "",
-    material: "",
-    pendantSize: "",
-    productName: "",
-    showImgListStr: "",
-    detailImgListStr: ""
-  });
-
+  const [fields, setFields] = useState<Fields>({} as Fields);
+const previewRef = useRef<HTMLDivElement>(null);
+const getPreviewHtml = ():string=>{
+  // debugger;
+  return  (previewRef && previewRef.current && previewRef.current.outerHTML)||"";
+  
+};
   // const [isOnline, setIsOnline] = useState(true);
   // console.log(fields);
   return (
@@ -30,7 +27,10 @@ const App = () => {
       </Header>
       <Layout>
         <Sider width={200} className="site-layout-background">
-          <ProductDetailForm onChangeCb={(fields) => { setFields(fields); }} />
+          <ProductDetailForm 
+          onChangeCb={(fields) => { setFields(fields); }}
+          onlineClickCb={getPreviewHtml}
+          />
         </Sider>
         <Layout style={{ padding: '0 24px 24px' }}>
           <Content
@@ -41,7 +41,7 @@ const App = () => {
               minHeight: 280,
             }}
           >
-            <Preview {...{ fields }} />
+            <Preview {...{ fields,selfRef:previewRef }} />
           </Content>
         </Layout>
       </Layout>

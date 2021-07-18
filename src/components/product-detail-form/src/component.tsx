@@ -5,15 +5,22 @@ import {ProductDetailFormProps} from './interface';
 import AntRadio  from '../../ant-radio/src/component';
 import TextArea from 'antd/lib/input/TextArea';
 
-const ProductDetailForm:FC<ProductDetailFormProps> = ({onChangeCb}) => {
+const ProductDetailForm:FC<ProductDetailFormProps> = ({onChangeCb,onlineClickCb,}) => {
   const [form] = Form.useForm();
   const formLayout ='vertical';
 // debugger;
 const handleOnlineClick =()=>{
     
-    const fields = form.getFieldsValue();
+    // const fields = form.getFieldsValue();
     // console.log(fields);
     // 
+   const html = (onlineClickCb && onlineClickCb())||"";
+   // 
+   navigator.clipboard.writeText(html).then((res)=>{
+// console.log(res);
+alert('copy code success');
+   });
+//    console.log(html);
 };
 const handleOnChange = () => {
     const fields = form.getFieldsValue();
@@ -33,7 +40,7 @@ useEffect(()=>{
         initialValues={{
           layout: formLayout,
         }}
-        onFinish={(props)=>{console.log(props)}}
+        // onFinish={(props)=>{console.log(props)}}
         onChange={handleOnChange}
       > 
         <Form.Item label="品名" name="productName">

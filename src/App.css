@@ -8,3 +8,7 @@
   background-color: #fafafa;
   padding:16px;
 }
+.ant-layout-content{
+  overflow:scroll;
+  height:1024px;
+}
