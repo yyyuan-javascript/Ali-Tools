@@ -7,6 +7,8 @@ import {
     BuyerNoticeImg,
 } from './const';
 import ProductInfo from '../../product-info';
+import ImgList from '../../Img-list';
+import {getImgListFromString} from './helper';
 const Preview: FC<PreviewProps> = ({
     fields }) => {
     const {
@@ -23,9 +25,11 @@ const Preview: FC<PreviewProps> = ({
                  fontSize: '14px', fontWeight: 600, fontFamily: 'MicrosoftJhengHei',
                 position: 'relative'
             }}>
-                <img src={ProductInfoImg} alt="product info" style={{ maxWidth: "750px", width: "100%" }} />
+                <ImgList imgList={[{img:ProductInfoImg,alt:"product info"}]}/>
                 <ProductInfo {...{ fields }} />
-                <img src={ProductShowImg} alt="product show" style={{ maxWidth: "750px", width: "100%" }} />
+                <ImgList imgList={[{img:ProductShowImg,alt:"product show"}]}/>
+                <ImgList imgList={getImgListFromString(showImgListStr)}/>
+                <ImgList imgList={getImgListFromString(detailImgListStr)}/>
             </div>
         </div>
     );
