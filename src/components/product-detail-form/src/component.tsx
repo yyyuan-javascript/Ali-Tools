@@ -67,6 +67,12 @@ useEffect(()=>{
         <Form.Item label="吊坠尺寸（MM）" name="pendantSize">
           <Input placeholder="长*宽" />
         </Form.Item>
+        <Form.Item label="耳环尺寸" name="earringSize">
+          <Input placeholder="长*宽*高" />
+        </Form.Item>
+        <Form.Item label="重量（g）" name="weight">
+          <Input placeholder="" />
+        </Form.Item>
         <Form.Item label="商品展示图片字符串（淘宝中复制）" name="showImgListStr">
           <TextArea  />
         </Form.Item>
@@ -76,9 +82,9 @@ useEffect(()=>{
         <Form.Item >
           <Button type="primary" htmlType="submit" onClick={handleOnlineClick}>复制online代码</Button>
         </Form.Item>
-        <Form.Item >
+        {/* <Form.Item >
           <Button type="primary" htmlType="submit">复制h5代码</Button>
-        </Form.Item>
+        </Form.Item> */}
       </Form>
     
   );

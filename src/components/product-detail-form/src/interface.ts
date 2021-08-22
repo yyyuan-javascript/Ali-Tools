@@ -10,4 +10,6 @@ export interface Fields {
     productName:string;
     showImgListStr:string;
     detailImgListStr:string;
+    earringSize: string;
+    weight: string;
 }

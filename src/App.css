@@ -7,8 +7,10 @@
 .ant-layout-sider{
   background-color: #fafafa;
   padding:16px;
+  height: 550px;
+  overflow: scroll;
 }
 .ant-layout-content{
-  overflow:scroll;
-  height:1024px;
+  height: 550px;
+  overflow: scroll;
 }
