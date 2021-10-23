@@ -5,7 +5,7 @@ const dTxt1 = "You <br/><br/> are <br/><br/> different<br/><br/>/";
 const dTxt2 = "每天都是绽放之日";
 const dTxt3 = "不褪色莫桑石项链";
 
-const T1:FC<any> = ({src,txt1,txt2,txt3}) => {
+const T1:FC<any> = ({src,txt1,txt2,txt3} = {}) => {
     return <div className="wrap t-1">
         <div className="inner"> 
         <div className="circle"></div>
