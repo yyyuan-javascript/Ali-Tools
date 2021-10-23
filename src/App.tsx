@@ -6,6 +6,7 @@ import ProductDetailForm from './components/product-detail-form';
 import Preview from './components/preview';
 import { useState, useRef } from 'react';
 import {Fields} from './components/product-detail-form/src/interface';
+import T from './template2/product-detail/t_1';
 const { Header, Content, Sider } = Layout;
 const App = () => {
   const [fields, setFields] = useState<Fields>({} as Fields);
@@ -41,7 +42,8 @@ const getPreviewHtml = ():string=>{
               minHeight: 280,
             }}
           >
-            <Preview {...{ fields,selfRef:previewRef }} />
+            <T />
+            {/* <Preview {...{ fields,selfRef:previewRef }} /> */}
           </Content>
         </Layout>
       </Layout>
