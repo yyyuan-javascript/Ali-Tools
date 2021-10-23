@@ -1,0 +1,46 @@
+.wrap {
+width: 740px;
+
+padding: 48px;
+background:white;
+
+}
+
+.t-1 {
+.inner{
+    position:relative;
+}
+    img{
+        width: 646px;
+    }
+    .circle{
+        background: white;
+        border-radius:100%;
+        width: 25px;
+        height: 25px;
+        position:absolute;
+        top:24px;
+        left:18px;
+        
+    }
+    .txt1{
+        color: white;
+        position:absolute;
+        top:22px;
+        right:20px;
+    }
+    .txt2{
+        color: white;
+        position: absolute;
+        bottom: 94px;
+        left: 48px;
+        font-size: 36px;
+    }
+    .txt3{
+        color: white;
+        position: absolute;
+        bottom:50px;
+        left:45px;
+        font-size:24px;
+    }
+}
