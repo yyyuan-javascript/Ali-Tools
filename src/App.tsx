@@ -9,7 +9,7 @@ export default () => {
     <div>
       <Switch>
         <Route path="/template" component={TemplatesPage} />
-        <Route path="/" component={GoodsDetailsPage} />
+        <Route path="/goodsDetail" component={GoodsDetailsPage} />
       </Switch>
     </div>
   )
