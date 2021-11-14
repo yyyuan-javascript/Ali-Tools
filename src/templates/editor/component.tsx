@@ -1,7 +1,8 @@
-import React,{FC, useState} from 'react';
+import React,{FC, useState, } from 'react';
 import { Form, Upload, Button } from 'antd';
 import UploadList from '@components/upload-list/component';
 import InputList from '@components/input-list/component';
+
 export interface ModuleEditorProps {
     onChangeCb: (fields:any)=>void,
     imgList:string[],

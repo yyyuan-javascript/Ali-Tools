@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { TemplateConf,Editor } from './interface';
-import { Modal } from 'antd';
+import { Modal, Button } from 'antd';
 import { Layout } from 'antd';
 import ModuleEditor from './editor';
+import html2canvas from 'html2canvas';
 const { Header, Footer, Sider, Content } = Layout;
 
 export default () => {
   const [popProps, setPopProps] = useState<{ content: React.ComponentType | null; visible: boolean;editor:Editor }> ({ content: null, visible: false,editor:{imgList:[],inputList:[]}})
   const [previewModuleProps, setPreviewModuleProps] = useState<any>({});
+  // const picRef = useRef<HTMLDivElement>(null);
+  const screenShotRef = useRef<HTMLImageElement>(null);
   const contextLoader = (require as any).context('./temps', true, /^\.[\\/]\w+[\\/](info\.json|preview\.png|index\.ts|editor\.json)$/);
 
   const templates: TemplateConf = contextLoader.keys().reduce((res: TemplateConf, temp: string) => {
@@ -38,12 +41,21 @@ style={{paddingBottom:'0',top:'0'}}
     visible={popProps.visible}>
  <Layout>
       <Layout>
-        <Content>{popProps.content && (popProps.content as any)(previewModuleProps)}</Content>
+        <Content><div >{popProps.content && (popProps.content as any)(previewModuleProps)}</div></Content>
         <Sider>
           <ModuleEditor {...popProps.editor} onChangeCb={(data:any)=>{console.log(data);setPreviewModuleProps(data)}}/>
         </Sider>
       </Layout>
-      <Footer>Footer</Footer>
+      <Footer>
+        {"截图区"}
+        <img width="100px" height="100px" ref={screenShotRef}/>
+<Button  onClick={()=>{
+  const wrapper:HTMLLIElement = document.querySelector('.ant-layout-content .wrap') as HTMLLIElement;
+ wrapper && html2canvas(wrapper,{useCORS:true,scale:window.devicePixelRatio}).then(canvas=>{
+screenShotRef.current && (screenShotRef.current.src = canvas.toDataURL());
+  });
+}}>截图</Button>
+      </Footer>
     </Layout>
       
       </Modal>
