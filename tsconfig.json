@@ -23,7 +23,11 @@
     "inlineSourceMap": true,
     "importHelpers": true,
     "types": ["node"],
-    "typeRoots": ["./node_modules/@types"]
+    "typeRoots": ["./node_modules/@types"],
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["./app/view/components/*"]
+    }
   },
   "exclude": [
     "app/public",

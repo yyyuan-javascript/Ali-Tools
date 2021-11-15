@@ -1,0 +1,14 @@
+.App {
+  display:flex;
+}
+
+.ant-layout-sider{
+  background-color: #fafafa;
+  padding:16px;
+  height: 550px;
+  overflow: scroll;
+}
+.ant-layout-content{
+  height: 550px;
+  overflow: scroll;
+}
